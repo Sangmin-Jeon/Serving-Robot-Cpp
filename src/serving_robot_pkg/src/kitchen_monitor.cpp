@@ -1,6 +1,10 @@
 #include <rclcpp/rclcpp.hpp>
 #include <string>
 
+#include <QApplication>
+#include <QMainWindow>
+#include <QtWidgets>
+
 class KitchenMonitorNode : public rclcpp::Node {
 public:
     KitchenMonitorNode(): Node("kitchen_monitor_node") {

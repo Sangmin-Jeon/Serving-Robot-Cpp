@@ -8,15 +8,20 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
+
+find_package(Qt5 REQUIRED COMPONENTS Widgets)
 
 include_directories(
   include
   ${rclcpp_INCLUDE_DIRS}
+  ${Qt5Widgets_INCLUDE_DIRS}  # Qt5 Widgets 헤더 파일 경로 추가
 )
 
 add_executable(kitchen_monitor src/kitchen_monitor.cpp)
-ament_target_dependencies(kitchen_monitor rclcpp std_msgs)
+
+ament_target_dependencies(kitchen_monitor rclcpp)
+
+target_link_libraries(kitchen_monitor Qt5::Widgets)
 
 install(TARGETS
   kitchen_monitor
