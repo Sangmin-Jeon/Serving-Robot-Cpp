@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 
 find_package(Qt5 REQUIRED COMPONENTS Widgets)
+find_package(std_msgs REQUIRED)
 
 include_directories(
   include
@@ -19,7 +20,8 @@ include_directories(
 
 add_executable(kitchen_monitor src/kitchen_monitor.cpp)
 
-ament_target_dependencies(kitchen_monitor rclcpp)
+ament_target_dependencies(kitchen_monitor rclcpp std_msgs)
+
 
 target_link_libraries(kitchen_monitor Qt5::Widgets)
 
