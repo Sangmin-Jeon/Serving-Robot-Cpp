@@ -11,6 +11,7 @@ find_package(rclcpp REQUIRED)
 
 find_package(Qt5 REQUIRED COMPONENTS Widgets)
 find_package(std_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
 
 include_directories(
   include
@@ -20,7 +21,7 @@ include_directories(
 
 add_executable(kitchen_monitor src/kitchen_monitor.cpp)
 
-ament_target_dependencies(kitchen_monitor rclcpp std_msgs)
+ament_target_dependencies(kitchen_monitor rclcpp std_msgs std_srvs)
 
 
 target_link_libraries(kitchen_monitor Qt5::Widgets)
