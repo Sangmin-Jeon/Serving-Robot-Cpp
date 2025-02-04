@@ -263,8 +263,7 @@ private:
 class Tab1Content : public QWidget {
 public:
     explicit Tab1Content(std::shared_ptr<rclcpp::Node> node, QWidget *parent = nullptr)
-        : QWidget(parent), node_(node)
-    {
+        : QWidget(parent), node_(node) {
         QVBoxLayout *layout = new QVBoxLayout(this);
         main_dashboard_ = new MainDashboard(node, this);
         layout->addWidget(main_dashboard_);

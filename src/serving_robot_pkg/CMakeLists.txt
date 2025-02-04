@@ -20,14 +20,17 @@ include_directories(
 )
 
 add_executable(kitchen_monitor src/kitchen_monitor.cpp)
+add_executable(table_order src/table_order.cpp)
 
 ament_target_dependencies(kitchen_monitor rclcpp std_msgs std_srvs)
-
+ament_target_dependencies(table_order rclcpp std_msgs std_srvs)
 
 target_link_libraries(kitchen_monitor Qt5::Widgets)
+target_link_libraries(table_order Qt5::Widgets)
 
 install(TARGETS
   kitchen_monitor
+  table_order
   DESTINATION lib/${PROJECT_NAME}
 )
 
